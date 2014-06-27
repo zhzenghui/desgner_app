@@ -1,0 +1,59 @@
+<%= form_for( @designer) do |f| %>
+  <% if @designer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@designer.errors.count, "error") %> prohibited this designer from being saved:</h2>
+
+      <ul>
+      <% @designer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :degn_id %><br>
+    <%= f.text_field :degn_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :spell %><br>
+    <%= f.text_field :spell %>
+  </div>
+  <div class="field">
+    <%= f.label :spell %><br>
+    <%= f.text_field :spell %>
+  </div>
+  <div class="field">
+    <%= f.label  :app_status_id %><br>
+    <%= f.text_field  :app_status_id %>
+  
+    <%= fields_for :app_status, @designer.app_status do |app_status_fields| %>
+      <%= app_status_fields.text_field :name %>  
+    <% end %>
+
+  </div>
+  <div class="field">
+    <%= f.label :template %><br>
+    <%= f.text_field :template  %>
+
+  <div class="field">
+  参考填写：
+    <% @templates.each do |t| %>
+      <%= t.spell %>（<%= t.name %>）
+      <%= check_box_tag "templates[spell]", t.id %>  
+
+    <% end %>
+
+
+
+  </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

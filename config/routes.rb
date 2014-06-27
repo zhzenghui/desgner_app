@@ -1,4 +1,10 @@
 Yue::Application.routes.draw do
+  resources :app_statuses
+
+  resources :templates
+
+  resources :designers
+
   resources :in_app_types
 
   resources :photos
@@ -13,7 +19,7 @@ Yue::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "designers#index"
   
 
   match '/avatar', to: 'home#avatar', via: 'get'

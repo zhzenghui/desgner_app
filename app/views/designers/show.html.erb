@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Degn:</strong>
+  <%= @designer.degn_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @designer.name %>
+</p>
+
+<p>
+  <strong>Spell:</strong>
+  <%= @designer.spell %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @designer.template %>
+</p>
+
+<%= link_to 'Edit', edit_designer_path(@designer) %> |
+<%= link_to 'Back', designers_path %>

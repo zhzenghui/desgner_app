@@ -1,0 +1,35 @@
+<h1> designers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t(:Degn) %></th>
+      <th><%= t(:Name) %></th>
+      <th><%= t(:Spell) %></th>
+      <th><%= t(:Template) %></th>
+      <th><%= t(:app_status_id) %></th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @designers.each do |designer| %>
+      <tr>
+        <td><%= designer.degn_id %></td>
+        <td><%= designer.name %></td>
+        <td><%= designer.spell %></td>
+        <td><%= designer.template %></td>
+        <td><%= designer.app_status_id %></td>
+
+        <td><%= link_to 'Show', designer %></td>
+        <td><%= link_to 'Edit', edit_designer_path(designer) %></td>
+        <td><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Designer', new_designer_path %>

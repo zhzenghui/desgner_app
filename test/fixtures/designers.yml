@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  degn_id: 
+  name: MyString
+  spell: MyString
+  template: MyString
+
+two:
+  degn_id: 
+  name: MyString
+  spell: MyString
+  template: MyString
